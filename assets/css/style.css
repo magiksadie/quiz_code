@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+/*variables*/
+:root {
+    background: #385E72;
+    --primary: #6aabd2;
+    --secondary: #b7cfdc;
+    --text: #d9e4ec;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+header {
+    background: var(--primary);
+    border-bottom: 5px solid var(--secondary);
+}
+footer {
+    width: 100%;
+    background: var(--primary);
+    border-top: 5px solid var(--secondary);
+    padding: 20px;
+}
