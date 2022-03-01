@@ -7,6 +7,7 @@
     --primary: #6aabd2;
     --secondary: #b7cfdc;
     --text: #d9e4ec;
+    font-size: 1.5rem;
 }
 body {
     margin: 0;
@@ -18,10 +19,34 @@ body {
 header {
     background: var(--primary);
     border-bottom: 5px solid var(--secondary);
+    padding: 30px 25px;
+    text-align: center;
 }
+header h1 {
+    color: var(--text);
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 4.5rem;
+}
+.page-content {
+    margin: 25px auto;
+    width: 95%;
+  }
+.btn {
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 8px 13px;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px;
+  }
 footer {
     width: 100%;
     background: var(--primary);
     border-top: 5px solid var(--secondary);
     padding: 20px;
+    text-align: center;
 }
