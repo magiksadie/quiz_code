@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /*variables*/
 :root {
@@ -7,6 +10,7 @@
     --primary: #6aabd2;
     --secondary: #b7cfdc;
     --text: #d9e4ec;
+    --gold: #fef400;
     font-size: 1.5rem;
 }
 body {
@@ -36,6 +40,7 @@ header h1 {
     outline: none;
     border: none;
     display: inline-block;
+    text-align: center;
     padding: 8px 13px;
     font-size: 1.8rem;
     border-radius: 12px;
@@ -43,6 +48,20 @@ header h1 {
     top: -3px;
     box-shadow: 0 3px;
   }
+.btn:hover {
+    cursor: pointer;
+    box-shadow: var(--primary);
+    transform: scale(1.03);
+  }
+.btn:disabled:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+#highScoresBtn {
+    background-color: var(--gold);
+    font-size: 1rem;
+}
 footer {
     width: 100%;
     background: var(--primary);
