@@ -35,6 +35,9 @@ header h1 {
     margin-top: 0;
     font-size: 4.5rem;
 }
+header p {
+    padding: 6px;
+}
 #timer {
     text-align: right;
     color: var(--text);
@@ -71,16 +74,27 @@ header h1 {
     font-size: 1rem;
     text-decoration: none; color: black;
 }
+#start {
+    text-align: center;
+    padding: 6px;
+}
+#start p {
+    padding: 10px;
+}
 .startBtn {
     text-decoration: none;
+    color: black;
 }
-#question {
+#questionSection {
     text-align: center;
+    padding: 6px;
+    margin: 5px;
 }
 #options {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 10px;
 }
 .answerBtn {
     display: flex;
