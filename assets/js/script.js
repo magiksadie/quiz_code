@@ -6,6 +6,7 @@ var timerEl = document.querySelector("#timer");
 let currentQuestion = {};
 let acceptingAnswer = true;
 let timer = 0;
+let questionCounter = 0;
 let availableQuestions = [];
 
 //question array
@@ -59,3 +60,19 @@ let questions = [
         answer: 4,
     },
 ]
+var questionAmount = 6;
+//select questions
+startGame = () => {
+    questionCounter = 0;
+    timer = 0;
+    availableQuestions = [...questions];
+    getNewQuestion();
+}
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > questionAmount) {
+        localStorage.setItem("recentScore", timer);
+        return window.location.assign("/end.html");
+    }
+    questionCounter++;
+    
+};
