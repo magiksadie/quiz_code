@@ -4,7 +4,10 @@ var timerVal = 0;
 var timeStampEl = document.querySelector("#timer");
 var timerEl = document.querySelector("#startBtn");
 var questionEl = document.querySelector("#question");
+var choicesEl = Array.from(document.querySelector("#answerBtn"));
 // hides sections
+let currentQuestion ={};
+
 // save scores
 var setSavedScores = function() {
     localStorage.setItem("savedScores", JSON.stringify(savedScores));

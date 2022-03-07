@@ -11,6 +11,7 @@
     <header>
         <h1>Code Quiz!</h1>
         <button class="btn" id="highScoresBtn">View Your Scores</button>
+        
         <nav id="timer">Timer:</nav>
         <p>Click the start button below to begin!</p>
     </header>
@@ -19,94 +20,14 @@
             <p>Answer the following questions within the time limit. Wrong answers remove 10 seconds from the timer!</p>
             <button class="btn startBtn">Start Quiz</button>
         </section>
-        <!--Questions!-->
         <section id="question">
             <h2>What is the correct way to add comments in javaScript?</h2>
             <div id="options">
-                <button type="button" class="answerBtn" value="1">// or */</button><br>
-                <button type="button" class="answerBtn" value="2">| or ||</button><br>
-                <button type="button" class="answerBtn" value="3">!--</button><br>
-                <button type="button" class="answerBtn" value="4">*...*</button>
+                <button type="button" class="answerBtn" data-number="1">// or */</button><br>
+                <button type="button" class="answerBtn" data-number="2">| or ||</button><br>
+                <button type="button" class="answerBtn" data-number="3">!--</button><br>
+                <button type="button" class="answerBtn" data-number="4">*...*</button>
             </div>
-        </section>
-        <section id="question">
-            <h2>Which loop allows you to loop through a block of code while a specified condition is true?</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">for</button><br>
-                <button type="button" class="answerBtn" value="2">for...in</button><br>
-                <button type="button" class="answerBtn" value="3">while</button><br>
-                <button type="button" class="answerBtn" value="4">on...while</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>True or false: javaScript is not case sensitive.</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">True</button><br>
-                <button type="button" class="answerBtn" value="2">False</button>
-        </div>
-        </section>
-        <section id="question">
-            <h2>How do you "jump out" a loop of code?</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">break</button><br>
-                <button type="button" class="answerBtn" value="2">stop</button><br>
-                <button type="button" class="answerBtn" value="3">continue</button><br>
-                <button type="button" class="answerBtn" value="4">fullstop</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>Which of the following comparisons operators mean equal of value and type? </h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">=</button><br>
-                <button type="button" class="answerBtn" value="2">!==</button><br>
-                <button type="button" class="answerBtn" value="3">&&</button><br>
-                <button type="button" class="answerBtn" value="4">===</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>True or false: it is preferred to use camelCase with Java Script.</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">True</button><br>
-                <button type="button" class="answerBtn" value="2">False</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>How do you contain an array?</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">[]</button><br>
-                <button type="button" class="answerBtn" value="2">""</button><br>
-                <button type="button" class="answerBtn" value="3">{}</button><br>
-                <button type="button" class="answerBtn" value="4">()</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>Which HTML element do we use to include external javaScript file?</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">"scripting"</button><br>
-                <button type="button" class="answerBtn" value="2">"java"</button><br>
-                <button type="button" class="answerBtn" value="3">"javascript"</button><br>
-                <button type="button" class="answerBtn" value="4">"script"</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>True or false: it is recommended to add the script element on the top of the HTML file.</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">True</button><br>
-                <button type="button" class="answerBtn" value="2">False</button>
-            </div>
-        </section>
-        <section id="question">
-            <h2>Which one of these is the proper way to create a function?</h2>
-            <div id="options">
-                <button type="button" class="answerBtn" value="1">function ="var"</button><br>
-                <button type="button" class="answerBtn" value="2">function: myFunction()</button><br>
-                <button type="button" class="answerBtn" value="3">function = myFunction()</button><br>
-                <button type="button" class="answerBtn" value="4">function myFunction()</button>
-            </div>
-        </section>
-        <!--Finished-->
-        <section>
-            <p>Your final score.</p>
         </section>
     </main>
     <footer>

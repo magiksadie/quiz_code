@@ -11,6 +11,9 @@
     --secondary: #b7cfdc;
     --text: #d9e4ec;
     --gold: #fef400;
+    --answerColor: #25ddf1;
+    --correct: #70dd84;
+    --incorrect: #ce3c49;
     font-size: 1.5rem;
 }
 body {
@@ -61,6 +64,26 @@ header h1 {
 #highScoresBtn {
     background-color: var(--gold);
     font-size: 1rem;
+}
+.answerBtn {
+    display: flex;
+    margin-bottom: .6rem;
+    width: 100%;
+    background-color: var(--answerColor);
+    border-radius: 6px;
+    font-size: .8rem;
+    border: 2px inset var(--secondary);
+}
+.answerBtn:hover {
+    cursor: pointer;
+    box-shadow: var(--secondary);
+    transform: scale(1.03);
+}
+.correct {
+    background-color: var(--correct);
+}
+.incorrect {
+    background-color: var(--incorrect);
 }
 footer {
     width: 100%;
