@@ -1,6 +1,6 @@
 // global variables
 var questionEl = document.querySelector("#question");
-var optionsEl = Array.from(document.querySelector("#answerBtn"));
+var optionsEl = new Array(document.querySelector("#answerBtn"));
 var timerEl = document.querySelector("#timer");
 
 let currentQuestion = {};
@@ -13,51 +13,57 @@ let availableQuestions = [];
 let questions = [
     { //question 2
         questionEl: 'Which loop allows you to loop through a block of code while a specified condition is true?',
-        choice1:`for`,
-        choice2:`for...in`,
-        choice3:`while`,
-        choice4:`on...while`,
-        answer: 3,
+        answers: [
+            {text:`for`, correct: false},
+            {text:`for...in`, correct: false},
+            {text:`while`, correct: true},
+            {text:`on...while`, correct: false}
+        ]
     },
     { //question 3
         questionEl: 'How do you "jump out" a loop of code?',
-        choice1:`break`,
-        choice2:`stop`,
-        choice3:`continue`,
-        choice4:`fullstop`,
-        answer: 1,
+        answers: [
+            {text:`break`, correct: true}, 
+            {text:`stop`, correct: false},
+            {text:`continue`, correct: false},
+            {text:`fullstop`, correct: false}
+        ]
     },
     { //question 4
         questionEl: 'Which of the following comparisons operators mean equal of value and type?',
-        choice1:`=`,
-        choice2:`!==`,
-        choice3:`&&`,
-        choice4:`===`,
-        answer: 4,
+        answers: [
+            {text:`=`, correct: false},
+            {text:`!==`, correct: false},
+            {text:`&&`, correct: false},
+            {text:`===`, correct: true}
+        ]
     },
     { //question 5
         questionEl: 'How do you contain an array?',
-        choice1:`[]`,
-        choice2:`""`,
-        choice3:`{}`,
-        choice4:`()`,
-        answer: 1,
+        answers: [
+            {text:`[]`, correct: true},
+            {text:`""`, correct: false},
+            {text:`{}`, correct: false},
+            {text:`()`, correct: false}
+        ]
     },
     { //question 5
         questionEl: 'Which HTML element do we use to include external javaScript file?',
-        choice1:`scripting`,
-        choice2:`java`,
-        choice3:`javascript`,
-        choice4:`script`,
-        answer: 4,
+        answers: [
+            {text:`scripting`, correct: false},
+            {text:`java`, correct: false},
+            {text:`javascript`, correct: false},
+            {text:`script`, correct: true}
+        ]
     },
     { //question 6
         questionEl: 'Which one of these is the proper way to create a function?',
-        choice1:`function ="var"`,
-        choice2:`function: myFunction()`,
-        choice3:`function = myFunction()`,
-        choice4:`function myFunction()`,
-        answer: 4,
+        answers: [
+            {text:`function ="var"`, correct: false},
+            {text:`function myFunction()`, correct: true},
+            {text:`function: myFunction()`, correct: false},
+            {text:`function = myFunction()`, correct: false}
+        ]
     },
 ]
 var questionAmount = 6;
@@ -74,5 +80,16 @@ getNewQuestion = () => {
         return window.location.assign("/end.html");
     }
     questionCounter++;
+
+    var questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    questionEl.innerText = currentQuestion.questionEl;
     
+    optionsEl.forEach(choice => {
+        var number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
+availableQuestions.splice(questionsIndex, 1);
+
+acceptingAnswer = true;
 };
