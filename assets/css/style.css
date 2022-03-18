@@ -23,9 +23,6 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-.hide {
-    
-}
 header {
     background: var(--primary);
     border-bottom: 5px solid var(--secondary);
@@ -77,16 +74,21 @@ header p {
     font-size: 1rem;
     text-decoration: none; color: black;
 }
-#start {
+#startSection {
     text-align: center;
     padding: 6px;
 }
-#start p {
+#startSection p {
     padding: 10px;
 }
 .startBtn {
     text-decoration: none;
     color: black;
+}
+.nextBtn {
+    text-decoration: none;
+    display: flex;
+    margin-left: auto;
 }
 #questionSection {
     text-align: center;
@@ -116,9 +118,11 @@ header p {
 }
 .correct {
     background-color: var(--correct);
+    border-color: var(--correct);
 }
 .incorrect {
     background-color: var(--incorrect);
+    border-color: var(--incorrect);
 }
 footer {
     width: 100%;
