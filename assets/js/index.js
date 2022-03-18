@@ -18,6 +18,15 @@ function getNewQuestion() {
 console.log('Youve gotten this far!')
 //question and answers array
 let questions = [
+    { //question 3
+        questionEl: 'What is the correct way to add comments in javaScript?',
+        answers: [
+            {text:`// or */`, correct: true},
+            {text:`| or ||`, correct: false},
+            {text:`!--`, correct: false},
+            {text:`*...*`, correct: false}
+        ]
+    },
     { //question 2
         questionEl: 'Which loop allows you to loop through a block of code while a specified condition is true?',
         answers: [

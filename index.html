@@ -12,16 +12,28 @@
         <h1>Code Quiz!</h1>
         <a href="./highscores.html" class="btn" id="highScoresBtn">View Your Scores</a>
         <p>Click the start button below to begin!</p>
+        <div id="timer">
+            <p>Timer: </p>
+        </div>
     </header>
     <main class="page-content">
         <section id="start">
             <p>Answer the following questions within the time limit. Wrong answers remove 10 seconds from the timer!</p>
-            <a href="./quiz.html" class="btn" id="startBtn">Start Quiz</a>
+            <button class="btn startBtn" id="startBtn">Start Quiz</button>
+        </section>
+        <section id="questionSection" class="hide">
+            <h2 id ="question"></h2>
+            <div id="options">
+                <button type="button" class="btn answerBtn" data-number="1"></button><br>
+                <button type="button" class="btn answerBtn" data-number="2"></button><br>
+                <button type="button" class="btn answerBtn" data-number="3"></button><br>
+                <button type="button" class="btn answerBtn" data-number="4"></button>
+            </div>
         </section>
     </main>
     <footer>
         &copy; Created by Sadie Harty
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

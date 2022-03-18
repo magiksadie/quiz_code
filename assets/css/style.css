@@ -23,6 +23,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+.hide {
+    
+}
 header {
     background: var(--primary);
     border-bottom: 5px solid var(--secondary);
