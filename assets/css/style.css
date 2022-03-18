@@ -124,6 +124,9 @@ header p {
     background-color: var(--incorrect);
     border-color: var(--incorrect);
 }
+.hide {
+    display: none;
+}
 footer {
     width: 100%;
     background: var(--primary);
