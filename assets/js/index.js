@@ -17,7 +17,10 @@ startBtnEl.addEventListener('click', function() {
     questionSectionEl.classList.remove('hide');
     getNewQuestion();
 });
-
+nextBtnEl.addEventListener('click', () => {
+    currentQuestionIx++;
+    getNewQuestion();
+})
 //select questions
 function getNewQuestion() {
     resetState();
@@ -39,12 +42,34 @@ function showQuestion(questions) {
 };
 
 function resetState() {
-    
+    nextBtnEl.classList.add('hide');
+    while (optionsEl.firstChild) {
+        optionsEl.removeChild(optionsEl.firstChild)
+    }
 };
 
 function selectOption(event) {
-
+    var selectedOptin = event.target;
+    var correct = selectOption.dataset.correct;
+    setStatusClass(document.body, correct)
+    Array.from(optionsEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    nextBtnEl.classList.remove('hide');
 };
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if(correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
+}
+function clearStatusClass(element) {
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
+}
 //question and answers array
 const questions = [
     { //question 1
