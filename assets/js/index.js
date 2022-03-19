@@ -5,7 +5,7 @@ var questionEl = document.getElementById('question');
 var optionsEl = document.getElementById("options");
 var timerEl = document.querySelector("#timer");
 var questionSectionEl = document.getElementById('questionSection');
-var instructionPEl = document.getElementById("instructions");
+var instructionPEl = document.getElementById('instructions');
 
 let shuffledQuestions, currentQuestionIx;
 //start quiz
@@ -28,6 +28,8 @@ function getNewQuestion() {
 };
 
 function showQuestion(questions) {
+    document.body.classList.remove('correct');
+    document.body.classList.remove('incorrect');
     questionEl.innerText= questions.questionEl;
     questions.answers.forEach(answer => {
         var button = document.createElement('button');
@@ -49,7 +51,7 @@ function resetState() {
 };
 
 function selectOption(event) {
-    var selectedOptin = event.target;
+    var selectOption = event.target;
     var correct = selectOption.dataset.correct;
     setStatusClass(document.body, correct)
     Array.from(optionsEl.children).forEach(button => {
