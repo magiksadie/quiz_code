@@ -1,29 +1,49 @@
 //global variables
 var startBtnEl = document.querySelector("#startBtn");
-var questionEl = document.querySelector("#question");
+var questionEl = document.getElementById('question');
 var optionsEl = new Array(document.querySelector("#answerBtn"));
 var timerEl = document.querySelector("#timer");
+var questionSectionEl = document.getElementById('questionSection');
+var instructionPEl = document.getElementById("instructions");
 
+let shuffledQuestions, currentQuestionIx;
 //start quiz
 startBtnEl.addEventListener('click', function() {
     console.log("Start quiz has been pressed!");
+    startBtnEl.classList.add('hide');
+    instructionPEl.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5); //randomly sort questions
+    currentQuestionIx  = 0; //set first question
+    questionSectionEl.classList.remove('hide');
     getNewQuestion();
 });
 
 //select questions
 function getNewQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIx]);
+    questions.answers.forEach(answers => {
+        var button = button.innerText = answers.text;
+        button.classList.add('.btn');
+        if (answers.correct) {
+            button.dataset.correct = answers.correct;
+        }
+    });
+};
+function showQuestion(questions) {
+    questionEl.innerText= questions.questionEl;
+}
+function selectOption() {
 
 };
 
-console.log('Youve gotten this far!')
 //question and answers array
-let questions = [
-    { //question 3
+const questions = [
+    { //question 1
         questionEl: 'What is the correct way to add comments in javaScript?',
         answers: [
             {text:`// or */`, correct: true},
             {text:`| or ||`, correct: false},
-            {text:`!--`, correct: false},
+            {text:`<!-->`, correct: false},
             {text:`*...*`, correct: false}
         ]
     },
