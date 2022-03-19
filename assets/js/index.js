@@ -2,7 +2,7 @@
 var startBtnEl = document.querySelector("#startBtn");
 var nextBtnEl = document.getElementById('nextBtn');
 var questionEl = document.getElementById('question');
-var optionsEl = new Array(document.querySelector("#answerBtn"));
+var optionsEl = document.getElementById("options");
 var timerEl = document.querySelector("#timer");
 var questionSectionEl = document.getElementById('questionSection');
 var instructionPEl = document.getElementById("instructions");
@@ -32,7 +32,7 @@ function showQuestion(questions) {
     questions.answers.forEach(answer => {
         var button = document.createElement('button');
         button.innerText = answer.text;
-        button.classList.add('btn');
+        button.classList.add('btn', 'optionsColor');
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }

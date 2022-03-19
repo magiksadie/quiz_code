@@ -58,6 +58,7 @@ header p {
     top: -3px;
     box-shadow: 0 3px;
     background: var(--primary);
+    margin: .4rem;
   }
 .btn:hover {
     cursor: pointer;
@@ -98,23 +99,16 @@ header p {
 #options {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     padding: 10px;
 }
-.answerBtn {
-    display: flex;
-    justify-content: center;
-    margin-bottom: .6rem;
-    width: 85%;
-    background-color: var(--answerColor);
-    border-radius: 6px;
-    font-size: .8rem;
-    border: 2px inset var(--secondary);
-}
-.answerBtn:hover {
+#options:hover {
     cursor: pointer;
     box-shadow: var(--secondary);
     transform: scale(1.03);
+}
+.optionsColor {
+    background-color: var(--answerColor);
 }
 .correct {
     background-color: var(--correct);
