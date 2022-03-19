@@ -1,5 +1,6 @@
 //global variables
 var startBtnEl = document.querySelector("#startBtn");
+var nextBtnEl = document.getElementById('nextBtn');
 var questionEl = document.getElementById('question');
 var optionsEl = new Array(document.querySelector("#answerBtn"));
 var timerEl = document.querySelector("#timer");
@@ -9,7 +10,6 @@ var instructionPEl = document.getElementById("instructions");
 let shuffledQuestions, currentQuestionIx;
 //start quiz
 startBtnEl.addEventListener('click', function() {
-    console.log("Start quiz has been pressed!");
     startBtnEl.classList.add('hide');
     instructionPEl.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5); //randomly sort questions
@@ -20,22 +20,31 @@ startBtnEl.addEventListener('click', function() {
 
 //select questions
 function getNewQuestion() {
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIx]);
-    questions.answers.forEach(answers => {
-        var button = button.innerText = answers.text;
-        button.classList.add('.btn');
-        if (answers.correct) {
-            button.dataset.correct = answers.correct;
-        }
-    });
 };
+
 function showQuestion(questions) {
     questionEl.innerText= questions.questionEl;
-}
-function selectOption() {
-
+    questions.answers.forEach(answer => {
+        var button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectOption);
+        optionsEl.appendChild(button);
+    })
 };
 
+function resetState() {
+    
+};
+
+function selectOption(event) {
+
+};
 //question and answers array
 const questions = [
     { //question 1
