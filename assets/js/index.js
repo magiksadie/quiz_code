@@ -2,12 +2,18 @@
 var startBtnEl = document.querySelector("#startBtn");
 var nextBtnEl = document.getElementById('nextBtn');
 var questionEl = document.getElementById('question');
-var optionsEl = document.getElementById("options");
-var timerEl = document.querySelector("#timer");
+var optionsEl = document.getElementById(`options`);
 var questionSectionEl = document.getElementById('questionSection');
 var instructionPEl = document.getElementById('instructions');
+var timerEl = document.querySelector(`#timer`);
+
+let timer = 60;
 
 let shuffledQuestions, currentQuestionIx;
+
+let score = 0;
+let scores = []; //for storageData
+const penalty = 10;
 //start quiz
 startBtnEl.addEventListener('click', function() {
     startBtnEl.classList.add('hide');
@@ -16,11 +22,27 @@ startBtnEl.addEventListener('click', function() {
     currentQuestionIx  = 0; //set first question
     questionSectionEl.classList.remove('hide');
     getNewQuestion();
+    startTimer();
 });
 nextBtnEl.addEventListener('click', () => {
     currentQuestionIx++;
     getNewQuestion();
-})
+});
+//timer function
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        timerEl.innerHTML= "Timer: " + timer;
+        timer--;
+        if (currentQuestionIx >=shuffledQuestions.length) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+        if (timer <= -1) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+};
 //select questions
 function getNewQuestion() {
     resetState();
@@ -54,6 +76,11 @@ function selectOption(event) {
     var selectOption = event.target;
     var correct = selectOption.dataset.correct;
     setStatusClass(document.body, correct)
+    if (correct) {
+        score ++;
+    } else {
+        timer = timer - penalty;
+    }
     Array.from(optionsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -72,6 +99,10 @@ function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('incorrect');
 }
+
+function endGame() {
+    questionEl.innerText = "End of Quiz! Thank you for playing!";
+};
 //question and answers array
 const questions = [
     { //question 1
