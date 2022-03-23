@@ -1,6 +1,7 @@
 //global variables
 var startBtnEl = document.querySelector("#startBtn");
 var nextBtnEl = document.getElementById('nextBtn');
+var submitBtnEl = document.getElementById('submitBtn');
 var questionEl = document.getElementById('question');
 var optionsEl = document.getElementById(`options`);
 var questionSectionEl = document.getElementById('questionSection');
@@ -37,7 +38,7 @@ function startTimer() {
             clearInterval(timerInterval);
             endGame();
         }
-        if (timer <= -1) {
+        if (timer <= -1 || timer === 0) {
             clearInterval(timerInterval);
             endGame();
         }
@@ -102,7 +103,16 @@ function clearStatusClass(element) {
 
 function endGame() {
     questionEl.innerText = "End of Quiz! Thank you for playing!";
+    var informUserEl = document.getElementById('informUser');
+    informUserEl.innerHTML = "Your final score is " + score + "!";
+    optionsEl.classList.add('hide');
+    submitBtnEl.classList.remove('hide');
 };
+
+submitBtnEl.addEventListener('click', function() {
+    var userName = document.createElement('input');
+    us
+});
 //question and answers array
 const questions = [
     { //question 1

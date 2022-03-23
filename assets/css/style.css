@@ -91,6 +91,9 @@ header p {
     display: flex;
     margin-left: auto;
 }
+.submitBtn {
+    text-align: center;
+}
 #questionSection {
     text-align: center;
     padding: 6px;
