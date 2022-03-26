@@ -13,3 +13,6 @@ Web application that allows users to take a timed quiz. At the end of the quiz t
 
 ## Website
 https://magiksadie.github.io/quiz_code/
+
+## Website Image
+![Picture of the Quiz App](assets/images/quiz_photo.PNG)
