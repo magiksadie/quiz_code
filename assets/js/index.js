@@ -34,11 +34,9 @@ function startTimer() {
     var timerInterval = setInterval(function() {
         timerEl.innerHTML= "Timer: " + timer;
         timer--;
-        if (currentQuestionIx >=shuffledQuestions.length) {
-            clearInterval(timerInterval);
-            endGame();
-        }
-        if (timer <= -1 || timer === 0) {
+        let hasQuestionsRemaining = currentQuestionIx >=shuffledQuestions.length;
+        let timeExpired = (timer <= -1 || timer === 0);
+        if (hasQuestionsRemaining || timeExpired) {
             clearInterval(timerInterval);
             endGame();
         }
